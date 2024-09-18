@@ -16,7 +16,7 @@ const GameCard = ({ game }: Props) => {
     const { id, name, background_image, parent_platforms, metacritic} = game;
 
     return (
-        <Card width={'300px'} borderRadius={ 10 } overflow={'hidden'}>
+        <Card>
             <Image src={ getCroppedImageUrl(background_image) }  border='1px' borderColor='gray.700' />
             <CardBody>
                 <Heading fontSize={'2xl'}>{ name }</Heading>
@@ -24,7 +24,6 @@ const GameCard = ({ game }: Props) => {
                     <PlatformIconList platforms={ game.parent_platforms.map( p => p.platform ) }/>
                     <CriticScore score={ metacritic } />
                 </HStack>
-                
             </CardBody>
         </Card>
     )
