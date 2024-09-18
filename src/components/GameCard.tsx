@@ -16,8 +16,8 @@ const GameCard = ({ game }: Props) => {
     const { id, name, background_image, parent_platforms, metacritic} = game;
 
     return (
-        <Card>
-            <Image src={ getCroppedImageUrl(background_image) } borderRadius={ 10 }  border='1px' borderColor='gray.700' />
+        <Card width={'300px'} borderRadius={ 10 } overflow={'hidden'}>
+            <Image src={ getCroppedImageUrl(background_image) }  border='1px' borderColor='gray.700' />
             <CardBody>
                 <Heading fontSize={'2xl'}>{ name }</Heading>
                 <HStack justifyContent={'space-between'}>
