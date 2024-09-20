@@ -19,7 +19,7 @@ const GameCard = ({ game }: Props) => {
         <Card>
             <Image src={ getCroppedImageUrl(background_image) }  border='1px' borderColor='gray.700' />
             <CardBody>
-                <Heading fontSize={'2xl'}>{ name }</Heading>
+                <Heading fontSize={'1xl'}>{ name }</Heading>
                 <HStack justifyContent={'space-between'}>
                     <PlatformIconList platforms={ game.parent_platforms.map( p => p.platform ) }/>
                     <CriticScore score={ metacritic } />
