@@ -7,12 +7,11 @@ import getCroppedImageUrl from '../services/image-url';
 
 
 interface Props {
-    onSelectGenre: (genre: Genre) => void,
-}
+    onSelectGenre:  ( genre: Genre ) => void,
+    selectedGenre: Genre | null,
+} 
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 
-
-const GenreList = ({ onSelectGenre}: Props) => {
-    
     const { data: genres, isLoading, error } = useGenres();
 
     if (error) return null;
@@ -23,10 +22,16 @@ const GenreList = ({ onSelectGenre}: Props) => {
         <List>
             {
             genres.map( genre => (
-                    <ListItem key={genre.id} mb={3}>
+                    <ListItem key={ genre.id } mb={3}>
                         <HStack gap={2}>
                             <Image src={getCroppedImageUrl(genre.image_background)} boxSize={'32px'} borderRadius={6}/>
-                            <Button onClick={() => onSelectGenre(genre)} variant={'link'}>{genre.name }</Button>
+                            <Button 
+                                fontWeight={ genre.id === selectedGenre?.id ? 'bold' : 'normal'}
+                                color={ genre.id === selectedGenre?.id ? 'greenyellow' : 'normal'}
+                                onClick={() => onSelectGenre(genre)} 
+                                variant={'link'} >
+                                    { genre.name } 
+                            </Button>
                         </HStack>
                     </ListItem>
             )) 
