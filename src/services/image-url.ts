@@ -12,12 +12,10 @@ import React from 'react';
 
 const getCroppedImageUrl = (url: string) => {
 
-    if (url.length>0) {
-        const index = url.indexOf('media/') + 'media/'.length;
-        return url.slice(0, index) + 'crop/600/400/' + url.slice(index);
-    }
-    console.log('No Image Url found for this game...');
-    return url;  
+    if (!url)  return '';
+    
+    const index = url.indexOf('media/') + 'media/'.length;
+    return url.slice(0, index) + 'crop/600/400/' + url.slice(index);
 
 }
 
