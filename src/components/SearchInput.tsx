@@ -25,7 +25,7 @@ const SearchInput = ({ onSearch }: Props) => {
         <form onSubmit={ (e) => handleFormSubmit(e) }>
             <InputGroup>
                 <InputLeftElement paddingLeft={2} children={ <BsSearch /> }/>
-                <Input ref={ ref } borderRadius={ 20 }  backgroundColor={ 'gray.600' } variant='filled' placeholder='Search games...'/>
+                <Input ref={ ref } borderRadius={ 20 }  backgroundColor={ 'gray.650' } variant='filled' placeholder='Search games...'/>
             </InputGroup>
         </form>
         
