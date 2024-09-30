@@ -70,3 +70,7 @@ button:focus-visible {
   }
 }
   */
+
+  form {
+    width: 100%;
+  }
